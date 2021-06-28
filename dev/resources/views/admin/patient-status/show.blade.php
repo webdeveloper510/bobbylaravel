@@ -1,0 +1,46 @@
+@extends('layouts.admin')
+@section('content')
+
+<div class="card bg-blueGray-100">
+    <div class="card-header">
+        <div class="card-header-container">
+            <h6 class="card-title">
+                {{ trans('global.view') }}
+                {{ trans('cruds.patientStatus.title_singular') }}:
+                {{ trans('cruds.patientStatus.fields.id') }}
+                {{ $patientStatus->id }}
+            </h6>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="pt-3">
+            <table class="table table-view">
+                <tbody class="bg-white">
+                    <tr>
+                        <th>
+                            {{ trans('cruds.patientStatus.fields.id') }}
+                        </th>
+                        <td>
+                            {{ $patientStatus->id }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.patientStatus.fields.status') }}
+                        </th>
+                        <td>
+                            {{ $patientStatus->status }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <a href="{{ route('admin.patient-statuses.index') }}" class="btn btn-secondary">
+                {{ trans('global.back') }}
+            </a>
+        </div>
+    </div>
+</div>
+@endsection

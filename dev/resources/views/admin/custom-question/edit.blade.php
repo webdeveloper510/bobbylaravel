@@ -1,0 +1,20 @@
+@extends('layouts.admin')
+@section('content')
+
+<div class="card bg-blueGray-100">
+    <div class="card-header">
+        <div class="card-header-container">
+            <h6 class="card-title">
+                {{ trans('global.edit') }}
+                {{ trans('cruds.customQuestion.title_singular') }}:
+                {{ trans('cruds.customQuestion.fields.id') }}
+                {{ $customQuestion->id }}
+            </h6>
+        </div>
+    </div>
+
+    <div class="card-body">
+        @livewire('custom-question.edit', [$customQuestion])
+    </div>
+</div>
+@endsection
